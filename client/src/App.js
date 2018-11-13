@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
+import logo from './logo.png';
 import './App.css';
+import ApolloClient from 'apollo-boost';
+import ApolloProvider from 'react-apollo';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:5000/graphql'
+});
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      <h1> Spacex </h1>
+      <ApolloProvider client={client}>
+      <div className="container">
+        <img src={logo} style={{width: '30vw', display: 'block', margin: 'auto'}} alt="SpaceX"/>
       </div>
+      </ApolloProvider>
     );
   }
 }
