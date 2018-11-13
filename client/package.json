@@ -8,6 +8,7 @@
     "react": "^16.6.3",
     "react-apollo": "^2.2.4",
     "react-dom": "^16.6.3",
+    "react-loading-animation": "^1.4.0",
     "react-scripts": "2.1.1"
   },
   "scripts": {

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import LaunchItem from './LaunchItem';
+import Loading  from 'react-loading-animation';
 
 const LAUNCHES_QUERY = gql`
     query LaunchesQuery{
@@ -22,7 +23,7 @@ class Launches extends Component{
                <Query query={LAUNCHES_QUERY}>
                     {
                         ({loading, error, data}) => {
-                            if(loading) return <h4>Loading...</h4>
+                            if(loading) return <><Loading /><h4 style={{marginLeft: '25vw', marginTop: '-7vh'}}>Loading...</h4></>
                             if(error) console.log(error);
                             
                             return (
