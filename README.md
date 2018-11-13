@@ -2,7 +2,15 @@
 
 > React-Apollo GraphQL WebApp to display launch stats using SpaceX API
 
-# Instructions
+## GraphQL
+
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
+## Apollo
+
+Apollo Client is a client-side library that leverages the power of a GraphQL API to handle data fetching and management for you, so that you can spend less time plumbing data and more on building your application.
+
+## Instructions
 
 - Clone the repository.
 - Install the dependencies when in the root path as well after navigating to the ```client``` directory.
