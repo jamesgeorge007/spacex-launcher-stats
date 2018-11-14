@@ -32,8 +32,41 @@ class Launch extends Component {
                     if(loading) return <h3>Loading ...</h3>
                     if(error) console.log(error);
 
-                    console.log(data);
-                    return <h1>Test</h1>
+                    const {
+                        mission_name,
+                        flight_number,
+                        launch_success,
+                        launch_date_local,
+                        rocket: { rocket_id, rocket_name, rocket_type }
+                    } = data.launch;
+                    return (
+                        <div>
+                            <h1 className="display-4 my-4">
+                                <span className="text-dark">Mission: </span> {mission_name}
+                            </h1>    
+                            <h4 className="mb-3">
+                                Launch Details
+                            </h4>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    Flight Number: {flight_number}
+                                </li>
+                                <li className="list-group-item">
+                                    Launch Year: {launch_date_local}
+                                </li>
+                                <li className="list-group-item">
+                                    Launch Sucessful: <span className={classNames({
+                                        'text-success': launch_success,
+                                        'text-danger': !launch_success,
+                                    })}>
+                                        {launch_success? 'Yes': 'No'}
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <h4 className="mt-3 mb-3"> Rocket Details</h4>
+                        </div>
+                    );
                 }
             }
         </Query>
