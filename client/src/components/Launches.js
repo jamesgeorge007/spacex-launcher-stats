@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import LaunchItem from './LaunchItem';
 import Loading  from 'react-loading-animation';
+import MissionKey from './MissionKey';
 
 const LAUNCHES_QUERY = gql`
     query LaunchesQuery{
@@ -20,7 +21,8 @@ class Launches extends Component{
         return(
             <Fragment>
                 <h1 className="display-4 my-3">Launches</h1>
-               <Query query={LAUNCHES_QUERY}>
+                <MissionKey />
+                <Query query={LAUNCHES_QUERY}>
                     {
                         ({loading, error, data}) => {
                             if(loading) return <><Loading /><h4 style={{marginLeft: '25vw', marginTop: '-7vh'}}>Loading...</h4></>
