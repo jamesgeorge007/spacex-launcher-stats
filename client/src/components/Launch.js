@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import Loading from 'react-loading-animation';
 
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
@@ -29,7 +30,7 @@ class Launch extends Component {
         <Query query={LAUNCH_QUERY} variables={{flight_number}}>
             {
                 ({loading, error, data}) => {
-                    if(loading) return <h3>Loading ...</h3>
+                    if(loading) return <Loading />
                     if(error) console.log(error);
 
                     const {
@@ -64,7 +65,14 @@ class Launch extends Component {
                                 </li>
                             </ul>
 
-                            <h4 className="mt-3 mb-3"> Rocket Details</h4>
+                            <h4 className="mt-3 mb-3"> Rocket Details </h4>
+                            <ul className="list-group"> 
+                                    <li className="list-group-item">Rocket ID: {rocket_id}</li>
+                                    <li className="list-group-item">Rocket Type: {rocket_type}</li>
+                                    <li className="list-group-item">Rocket Name: {rocket_name}</li>
+                            </ul>
+                            <hr />
+                            <Link to="/" className="btn btn-secondary">Back</Link>
                         </div>
                     );
                 }
