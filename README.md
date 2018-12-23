@@ -18,3 +18,7 @@ Apollo Client is a client-side library that leverages the power of a GraphQL API
 - Install the dependencies when in the root path as well after navigating to the ```client``` directory.
 - Come back to the root directory ```if not``` and fire in ```npm run dev``` which launches both the client and server part.
 - ```client``` part gets served on ```localhost:5000``` while ```server``` on ```localhost:5000/graphql```
+
+## License
+
+Licensed under the `GPL V3.0` license.
