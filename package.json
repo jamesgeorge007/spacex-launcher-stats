@@ -7,7 +7,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "format": "prettier --write *.js client/src/*.js client/src/components/*.js"
   },
   "author": "James George <jamesgeorge998001@gmail.com>",
   "license": "ISC",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
-    "nodemon": "^1.18.6"
+    "nodemon": "^1.18.6",
+    "prettier": "^2.0.5"
   }
 }
